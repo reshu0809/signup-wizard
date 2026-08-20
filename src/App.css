@@ -1,58 +1,101 @@
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
+html,
+body,
+#root {
+  min-height: 100%;
 }
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #000;
+}
+
+
+/* ========================================
+   LANDING PAGE
+======================================== */
 
 .landing-page {
   min-height: 100vh;
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: #000;
   padding: 20px;
+
+  position: relative;
+  overflow: hidden;
 }
 
 .landing-content {
   width: 100%;
   max-width: 500px;
+
   text-align: center;
   color: white;
+
+  position: relative;
+  z-index: 1;
 }
 
 .landing-content h1 {
   font-size: 48px;
+  font-weight: 600;
+
   margin-bottom: 20px;
 }
 
 .landing-content p {
   font-size: 18px;
-  margin-bottom: 30px;
   line-height: 1.6;
+
+  margin-bottom: 30px;
 }
 
 .landing-content button {
   padding: 15px 40px;
+
   border: none;
   border-radius: 10px;
+
   background: #8fa8ff;
   color: white;
+
   font-size: 18px;
   cursor: pointer;
+
+  transition: 0.2s;
 }
 
 .landing-content button:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
 }
+
+
+/* ========================================
+   TERMS & CONDITIONS PAGE
+======================================== */
+
 .terms-page {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: #000;
   padding: 20px;
 }
@@ -60,6 +103,7 @@ body {
 .terms-box {
   width: 100%;
   max-width: 600px;
+
   color: white;
 }
 
@@ -75,31 +119,46 @@ body {
 
 .terms-text {
   margin-top: 25px;
+
   padding: 20px;
+
   border-radius: 12px;
+
   background: #171717;
 }
 
 .terms-buttons {
   display: flex;
   justify-content: space-between;
+
   margin-top: 30px;
 }
 
 .terms-buttons button {
   padding: 14px 30px;
+
   border: none;
   border-radius: 10px;
+
   background: #8fa8ff;
   color: white;
+
   font-size: 16px;
   cursor: pointer;
 }
+
+
+/* ========================================
+   SIGNUP PAGE
+======================================== */
+
 .signup-page {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: #000;
   padding: 20px;
 }
@@ -107,6 +166,7 @@ body {
 .signup-box {
   width: 100%;
   max-width: 500px;
+
   color: white;
 }
 
@@ -117,92 +177,183 @@ body {
 
 .signup-description {
   font-size: 17px;
+
   margin-bottom: 30px;
+
   line-height: 1.5;
 }
 
 .signup-box label {
   display: block;
+
   margin-bottom: 8px;
+
   font-size: 16px;
 }
 
+
+/* ========================================
+   INPUTS
+======================================== */
+
 .signup-box input {
   width: 100%;
+
   padding: 15px;
+
+  margin-bottom: 0;
+
   border: 1px solid #555;
   border-radius: 10px;
+
   background: #171717;
   color: white;
+
   font-size: 16px;
+
   outline: none;
+}
+
+.signup-box input::placeholder {
+  color: #888;
 }
 
 .signup-box input:focus {
   border-color: #8fa8ff;
 }
 
+
+/* ========================================
+   SELECT / DROPDOWN
+======================================== */
+
+.signup-box select {
+  width: 100%;
+
+  padding: 15px;
+
+  border: 1px solid #555;
+  border-radius: 10px;
+
+  background: #171717;
+  color: white;
+
+  font-size: 16px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.signup-box select:focus {
+  border-color: #8fa8ff;
+}
+
+
+/* ========================================
+   ERROR MESSAGE
+======================================== */
+
 .error-message {
   color: #ff6b6b;
+
   margin-top: 8px;
+
   font-size: 14px;
 }
 
+
+/* ========================================
+   SIGNUP BUTTONS
+======================================== */
+
 .signup-buttons {
   display: flex;
+
   justify-content: space-between;
+
+  gap: 15px;
+
   margin-top: 30px;
 }
 
 .signup-buttons button {
   padding: 14px 30px;
+
   border: none;
   border-radius: 10px;
+
   background: #8fa8ff;
   color: white;
+
   font-size: 16px;
+
   cursor: pointer;
 }
+
+.signup-buttons button:hover {
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   OTP PAGE
+======================================== */
+
 .otp-page {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: #000;
+
   padding: 20px;
 }
 
 .otp-box {
   width: 100%;
   max-width: 500px;
+
   color: white;
 }
 
 .otp-box h1 {
   font-size: 40px;
+
   margin-bottom: 15px;
 }
 
 .otp-description {
   font-size: 17px;
+
   line-height: 1.5;
+
   margin-bottom: 30px;
 }
 
 .otp-box label {
   display: block;
+
   margin-bottom: 8px;
 }
 
 .otp-box input {
   width: 100%;
+
   padding: 15px;
+
   border: 1px solid #555;
   border-radius: 10px;
+
   background: #171717;
   color: white;
+
   font-size: 20px;
+
   letter-spacing: 5px;
+
   outline: none;
 }
 
@@ -210,122 +361,140 @@ body {
   border-color: #8fa8ff;
 }
 
+.otp-box input::placeholder {
+  letter-spacing: normal;
+  color: #888;
+}
+
+
+/* ========================================
+   OTP BUTTONS
+======================================== */
+
 .otp-buttons {
   display: flex;
+
   justify-content: space-between;
+
+  gap: 15px;
+
   margin-top: 30px;
 }
 
 .otp-buttons button {
   padding: 14px 30px;
+
   border: none;
   border-radius: 10px;
+
   background: #8fa8ff;
   color: white;
+
   font-size: 16px;
+
   cursor: pointer;
+}
+
+.otp-buttons button:hover {
+  opacity: 0.9;
 }
 
 .otp-buttons button:disabled {
   opacity: 0.6;
+
   cursor: not-allowed;
 }
-.signup-box select {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #555;
-  border-radius: 10px;
-  background: #171717;
-  color: white;
-  font-size: 16px;
-  outline: none;
-}
 
-.signup-box select:focus {
-  border-color: #8fa8ff;
-}
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-}
+/* ========================================
+   OLD / ADDITIONAL SIGNUP CONTAINER
+======================================== */
 
 .signup-container {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 20px;
 }
 
 .signup-card {
   width: 100%;
   max-width: 450px;
+
   background: white;
+
   padding: 35px;
+
   border-radius: 20px;
+
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .step-number {
   font-size: 14px;
-  color: #777;
-  margin-bottom: 15px;
-}
 
-h1 {
-  margin-bottom: 10px;
+  color: #777;
+
+  margin-bottom: 15px;
 }
 
 .subtitle {
   color: #666;
+
   margin-bottom: 25px;
 }
 
-input,
-select {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 16px;
-}
+
+/* ========================================
+   GENERIC BUTTONS
+======================================== */
 
 .button-row {
   display: flex;
+
   gap: 10px;
+
   margin-top: 20px;
 }
 
 button {
-  padding: 14px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
+  font-family: inherit;
 }
 
 .primary-button {
   width: 100%;
+
   background: #111;
+
   color: white;
 }
 
 .back-button {
   background: #e8e8e8;
+
   color: #111;
 }
 
+
+/* ========================================
+   GENERIC ERROR
+======================================== */
+
 .error {
   color: #d00;
+
   font-size: 14px;
+
   margin-top: 5px;
 }
+
+
+/* ========================================
+   SUCCESS PAGE
+======================================== */
 
 .success-card {
   text-align: center;
@@ -333,22 +502,161 @@ button {
 
 .success-icon {
   font-size: 60px;
+
   margin-bottom: 20px;
 }
+
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.progress-container {
+  margin-bottom: 25px;
+}
+
+.progress-text {
+  font-size: 14px;
+
+  color: #aaa;
+
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  display: flex;
+
+  gap: 6px;
+}
+
+.progress-step {
+  height: 5px;
+
+  flex: 1;
+
+  background: #555;
+
+  border-radius: 10px;
+}
+
+.progress-step.active {
+  background: #8fa8ff;
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE DESIGN
+======================================== */
+
 @media (max-width: 600px) {
+
+  /* Landing */
+
+  .landing-page {
+    padding: 20px;
+  }
+
+  .landing-content h1 {
+    font-size: 36px;
+  }
+
+  .landing-content p {
+    font-size: 16px;
+  }
+
+  .landing-content button {
+    width: 100%;
+
+    max-width: 350px;
+  }
+
+
+  /* Terms */
+
+  .terms-page {
+    padding: 20px;
+    align-items: flex-start;
+
+    padding-top: 50px;
+  }
+
+  .terms-box h1 {
+    font-size: 30px;
+  }
+
+  .terms-buttons {
+    gap: 10px;
+  }
+
+  .terms-buttons button {
+    flex: 1;
+  }
+
+
+  /* Signup */
+
+  .signup-page {
+    padding: 20px;
+
+    align-items: flex-start;
+
+    padding-top: 50px;
+  }
+
+  .signup-box h1 {
+    font-size: 30px;
+  }
+
+  .signup-description {
+    font-size: 16px;
+  }
+
+  .signup-buttons {
+    flex-direction: column;
+  }
+
+  .signup-buttons button {
+    width: 100%;
+  }
+
+
+  /* OTP */
+
+  .otp-page {
+    padding: 20px;
+
+    align-items: flex-start;
+
+    padding-top: 50px;
+  }
+
+  .otp-box h1 {
+    font-size: 30px;
+  }
+
+  .otp-buttons {
+    flex-direction: column;
+  }
+
+  .otp-buttons button {
+    width: 100%;
+  }
+
+
+  /* Old signup card */
+
   .signup-container {
     padding: 15px;
+
     align-items: flex-start;
+
     padding-top: 40px;
   }
 
   .signup-card {
     padding: 25px 20px;
-    border-radius: 15px;
-  }
 
-  h1 {
-    font-size: 26px;
+    border-radius: 15px;
   }
 
   .button-row {
@@ -358,29 +666,4 @@ button {
   .back-button {
     width: 100%;
   }
-}
-.progress-container {
-  margin-bottom: 25px;
-}
-
-.progress-text {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.progress-bar {
-  display: flex;
-  gap: 6px;
-}
-
-.progress-step {
-  height: 5px;
-  flex: 1;
-  background: #ddd;
-  border-radius: 10px;
-}
-
-.progress-step.active {
-  background: #111;
 }

@@ -9,13 +9,14 @@ import SignupStep4 from "./components/SignupStep4";
 import Success from "./components/Success";
 
 function App() {
-  // 0 = Terms
-  // 1 = Signup Step 1
-  // 2 = OTP
-  // 3 = Signup Step 2
-  // 4 = Signup Step 3
-  // 5 = Signup Step 4
-  // 6 = Success
+  // 0 = Landing Page
+  // 1 = Terms & Conditions
+  // 2 = Signup Step 1
+  // 3 = OTP
+  // 4 = Signup Step 2
+  // 5 = Signup Step 3
+  // 6 = Signup Step 4
+  // 7 = Success
 
   const [step, setStep] = useState(0);
 
@@ -35,42 +36,77 @@ function App() {
   };
 
   const completeSignup = () => {
-    setStep(6);
+    setStep(7);
   };
 
   return (
     <>
-      {/* TERMS & CONDITIONS */}
+      {/* =====================================
+          LANDING PAGE
+      ===================================== */}
 
       {step === 0 && (
+        <div className="landing-page">
+          <div className="landing-content">
+
+            <h1>Welcome to Nubpack</h1>
+
+            <p>
+              Create your profile and get started.
+            </p>
+
+            <button onClick={() => setStep(1)}>
+              Get Started
+            </button>
+
+          </div>
+        </div>
+      )}
+
+
+      {/* =====================================
+          TERMS & CONDITIONS
+      ===================================== */}
+
+      {step === 1 && (
         <Terms
           onBack={() => setStep(0)}
-          onAccept={() => setStep(1)}
+          onAccept={() => setStep(2)}
         />
       )}
 
-      {/* SIGNUP STEP 1 */}
 
-      {step === 1 && (
+      {/* =====================================
+          SIGNUP STEP 1
+      ===================================== */}
+
+      {step === 2 && (
         <SignupStep1
           formData={formData}
           setFormData={setFormData}
           onNext={nextStep}
+          onBack={previousStep}
         />
       )}
 
-      {/* OTP */}
 
-      {step === 2 && (
+      {/* =====================================
+          OTP
+      ===================================== */}
+
+      {step === 3 && (
         <OTP
           onNext={nextStep}
           onBack={previousStep}
         />
       )}
 
-      {/* SIGNUP STEP 2 */}
 
-      {step === 3 && (
+      {/* =====================================
+          SIGNUP STEP 2
+      ===================================== */}
+
+      {step === 4 && (
         <SignupStep2
           formData={formData}
           setFormData={setFormData}
@@ -79,9 +115,12 @@ function App() {
         />
       )}
 
-      {/* SIGNUP STEP 3 */}
 
-      {step === 4 && (
+      {/* =====================================
+          SIGNUP STEP 3
+      ===================================== */}
+
+      {step === 5 && (
         <SignupStep3
           formData={formData}
           setFormData={setFormData}
@@ -90,9 +129,12 @@ function App() {
         />
       )}
 
-      {/* SIGNUP STEP 4 */}
 
-      {step === 5 && (
+      {/* =====================================
+          SIGNUP STEP 4
+      ===================================== */}
+
+      {step === 6 && (
         <SignupStep4
           formData={formData}
           setFormData={setFormData}
@@ -101,9 +143,12 @@ function App() {
         />
       )}
 
-      {/* SUCCESS */}
 
-      {step === 6 && <Success />}
+      {/* =====================================
+          SUCCESS
+      ===================================== */}
+
+      {step === 7 && <Success />}
     </>
   );
 }
